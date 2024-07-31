@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Video Gallery</h1>
+        <div class="row">
+            <div class="col">
+                <div class="feature-img">
+                    <img src="assets/img-1.jpg" width="100%" class="hover-image"> 
+                    <img src="assets/play-icon.png" class="play-btn" onclick="playVideo('/assets/video-1.mp4')">
+                 </div>
+            </div>
+            <div class="col">
+                <div class="small-img-row">
+                    <div class="small-img">
+                       <img src="assets/img-2.jpg" alt="" class="hover-image"> 
+                       <img src="assets/play-icon.png" class="play-btn" onclick="playVideo('/assets/video-2.mp4')">
+                    </div>
+                    <p>Coral reefs are vibrant underwater ecosystem. </p>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img">
+                       <img src="assets/img-3.jpg" alt="" class="hover-image"> 
+                       <img src="assets/play-icon.png" class="play-btn" onclick="playVideo('/assets/video-3.mp4')">
+                    </div>
+                    <p>Jellyfish have no brain, heart, or bones.</p>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img">
+                       <img src="assets/img-4.jpg" alt="" class="hover-image"> 
+                       <img src="assets/play-icon.png" class="play-btn" onclick="playVideo('/assets/video-4.mp4')">
+                    </div>
+                    <p>Turtles live both on land and in water, have hard shells for protection.</p>
+                </div>
+            </div>
+        </div>
+ </div>
+
+ <div class="video-player" id="videoplayer">
+    <video  width="100%" controls autoplay id="myvideo">
+        <source src="assets/video.mp4" type="video/mp4">
+    </video>
+    <img src="assets/cross.png" class="close-btn" onclick="stopbtn()">
+ </div>
+
+
+
+ <script>
+
+var videoplayer = document.getElementById("videoplayer");
+var myvideo = document.getElementById("myvideo");
+
+function stopbtn(){
+    videoplayer.style.display = "none";
+}
+
+function playVideo(file){
+    myvideo.src = file;
+    videoplayer.style.display = "block";
+}
+ </script>
+  
+</body>
+</html>
